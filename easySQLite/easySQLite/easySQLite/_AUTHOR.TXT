@@ -1,0 +1,19 @@
+
+easySQLite
+----------
+
+This is C++ wrapper for SQLite C API database engine.
+
+Released under BSD License.
+
+SQLite part of this wrapper is using Public Domain license.
+
+Copyright (c) 2010, Piotr Zagawa
+
+All rights reserved.
+
+contact:
+mailto:oldpeter72@gmail.com
+
+website:
+http://vetch.magot.pl

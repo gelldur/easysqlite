@@ -1,0 +1,259 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+	<meta name="author" content="Piotr Zagawa" />
+	<meta name="description" content="easySQLite short help" />
+	<meta name="keywords" content="easySQLite, sqlite, c++ wrapper" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Language" content="en" />
+	<title>easySQLite short help</title>
+	<style type="text/css">
+	body
+	{
+		font-family: Verdana, Helvetica, Arial, Tahoma, Sans-Serif, 'Microsoft Sans Serif';    
+		font-size: small;
+		margin: 16px 5% 16px 5%;
+		background-color: #ffffff;
+		color: #553322;
+	}
+	span.title
+	{
+		color: #448800;
+		padding: 4px;
+		padding-top: 8px;
+		padding-bottom: 8px;			
+		font-size: larger;
+	}
+	span.subtitle
+	{
+		color: #88bb00;
+		padding: 4px;
+		padding-top: 8px;
+		padding-bottom: 8px;
+		font-style: italic;
+		font-size: smaller;
+		margin-left: 16px;
+	}
+	h1
+	{
+		margin-bottom: 24px;
+	}
+	h3
+	{
+		font-variant: small-caps;
+		margin-left: 4px;
+		border-left: solid 16px #FF7733;
+		padding-left: 4px;
+		color: #aa3300;
+		width: 30%;
+	}
+	p
+	{
+		margin-left: 12px;
+	}
+	pre
+	{
+		padding: 12px;
+		padding-bottom: 4px;
+		padding-left: 24px;
+		margin-left: 32px;
+		background-color: #ccddff;
+		width: 60%;
+	}
+	code
+	{
+		color: #002244;
+	}
+	</style>	
+</head>
+<body>
+
+<h1><span class="title">easySQLite</span><br/><span class="subtitle">a C++ SQLite wrapper</span></h1>
+
+<p>This is C++ API wrapper for <a href="http://www.sqlite.org/">SQLite</a> C API database engine. It was written to simplify and speedup coding
+of local database access.</p>
+
+<p>easySQLite is released under BSD License.</p>
+
+<p>easySQLite was written and tested with Visual C++ 2010 Express, but is not
+using any nonstandard extensions, so should compile with any other C++ compiler.</p>
+
+<h3>How To Start ?</h3>
+
+<p>First, include "SqlCommon.h" and other headers if required to your project.</p>
+
+<p>easySQLite uses <b>sql namespace</b>.</p>
+
+<p>At begin, you should create database table structure as Field's objects array:</p>
+
+	<pre>
+<code>
+Field definition_tbPerson[] =
+{
+	Field(FIELD_KEY),
+	Field("fname", type_text, flag_not_null),
+	Field("lname", type_text, flag_not_null),
+	Field("birthdate", type_time),
+	Field(DEFINITION_END),
+};
+</code>
+	</pre>
+
+Default Field object constructor parameters:
+<ul>
+	<li><b>name</b><br/>(sql::string)</li>
+	<li><b>type</b><br/>(sql::field_type)</li>
+	<li><b>flags</b><br/>(sql::field_flags). Can be OR'ed</li>
+</ul>
+
+<p>Table structure definition should begin with Field(FIELD_KEY) and end with Field(DEFINITION_END).</p>
+
+<p>Field(FIELD_KEY) is like Field("_ID", type_int, flag_primary_key).</p>
+
+<p>Now, you are ready to open/create database file. Define database object and then open database file.</p>
+
+<code>
+	<pre>
+sql::Database db;
+
+try
+{
+	db.open("test.db");
+	//...
+
+} catch (Exception e) {
+	//...
+}	
+	</pre>
+</code>
+
+<p><span class="tip">TIP</span>: you can check for errors by using return bool value of any method and ::errMsg() of used object.
+Default behaviour for most objects is to use exceptions.</p>
+
+<p>Disable USE_EXCEPTIONS directive in SqlCommon.h to "manually" check for result values, for example:</p>
+
+<code>
+	<pre>
+if (!db.open("test.db"))
+{
+	log(db.errMsg());
+}
+	</pre>
+</code>
+
+<p>When database file is up and ready, you can define new Table object for it:<p>
+
+<code>
+	<pre>
+sql::Table tbPerson(db.getHandle(), "person", definition_tbPerson);	
+	</pre>
+</code>
+
+Default Table object constructor parameters:
+<ul>
+	<li><b>db handle</b><br/>(sqlite3*)</li>
+	<li><b>tableName</b><br/>(sql::string)</li>
+	<li><b>fields definition</b><br/>(sql::Field*). Field* array or FieldSet* of another table.</li>
+</ul>
+
+<p>Now, the simplest way to interact with data is to use Table object methods, for example:</p>
+
+<code>
+	<pre>
+//remove table from database if exists
+if (tbPerson.exists())
+	tbPerson.remove();
+
+//create new table
+tbPerson.create();
+
+//removes all records
+tbPerson.truncate();
+
+//loads all records to internal recordset
+tbPerson.open();
+	
+//loads one record
+tbPerson.open("_ID == 5");
+
+//returns loaded records count
+tbPerson.recordCount();
+	</pre>
+</code>
+
+<h3>Modify Or Query Data</h3>
+
+<p>To make modifications of your data or query them, you must use Record object.</p>
+
+<p>To add (insert) new record to table, define Record with table FieldSet definition.
+Then you can set some data to fields and just insert new record to table:</p>
+
+<code>
+	<pre>
+Record record(tbPerson.fields());
+
+record.setString("fname", "Jan");
+record.setString("lname", "Kowalski");
+record.setTime("birthdate", time::now());
+
+tbPerson.addRecord(&record);
+	</pre>
+</code>
+
+<p>Query records and update at once:</p>
+
+<code>
+	<pre>
+tbPerson.open("_ID >= 10 and _ID <= 15");
+
+for (int index = 0; index < tbPerson.recordCount(); index++)
+{
+	if (Record* record = tbPerson.getRecord(index))
+	{
+		record->setString("fname", "");
+		record->setString("lname", "Nowak");
+		record->setNull("birthdate");
+
+		tbPerson.updateRecord(record);
+	}
+}	
+	</pre>
+</code>
+
+<p>List all records:</p>
+
+<code>
+	<pre>
+tbPerson.open();
+
+for (int index = 0; index < tbPerson.recordCount(); index++)
+	if (Record* record = tbPerson.getRecord(index))
+		log(record->toString());
+	</pre>
+</code>
+
+<p>Get one record by key field (_ID):</p>
+
+<code>
+	<pre>
+if (Record* record = tbPerson.getRecordByKeyId(7))
+{
+	//...
+}
+	</pre>
+</code>
+
+<p>You can find more usage examples in easySQLite.cpp project file.</p>
+
+<h3>Author</h3>
+
+<p>Copyright (c) 2010, Piotr Zagawa</p>
+
+<p>All rights reserved.</p>
+
+<p><a href="mailto:oldpeter72@gmail.com">contact</a>
+<a href="http://vetch.magot.pl">website</a></p>
+
+</body>
+</html>
+

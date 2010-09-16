@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="easySQLite">
+      <UniqueIdentifier>{fa17c3ad-5a75-418b-b357-2d686e264b63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UnitTest++">
+      <UniqueIdentifier>{c00d4f7f-58ff-4f19-8828-3c77349d9770}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="easySQLite\_AUTHOR.TXT">
+      <Filter>easySQLite</Filter>
+    </None>
+    <None Include="easySQLite\_LICENSE.TXT">
+      <Filter>easySQLite</Filter>
+    </None>
+    <None Include="easySQLite\_VERSION.TXT">
+      <Filter>easySQLite</Filter>
+    </None>
+    <None Include="easySQLite\_readme.html">
+      <Filter>easySQLite</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="easySqlite\SHA1.h">
+      <Filter>easySQLite</Filter>
+    </ClInclude>
+    <ClInclude Include="easySqlite\SqlCommon.h">
+      <Filter>easySQLite</Filter>
+    </ClInclude>
+    <ClInclude Include="easySqlite\SqlDatabase.h">
+      <Filter>easySQLite</Filter>
+    </ClInclude>
+    <ClInclude Include="easySqlite\SqlField.h">
+      <Filter>easySQLite</Filter>
+    </ClInclude>
+    <ClInclude Include="easySqlite\SqlFieldSet.h">
+      <Filter>easySQLite</Filter>
+    </ClInclude>
+    <ClInclude Include="easySqlite\sqlite3.h">
+      <Filter>easySQLite</Filter>
+    </ClInclude>
+    <ClInclude Include="easySqlite\SqlRecord.h">
+      <Filter>easySQLite</Filter>
+    </ClInclude>
+    <ClInclude Include="easySqlite\SqlRecordSet.h">
+      <Filter>easySQLite</Filter>
+    </ClInclude>
+    <ClInclude Include="easySqlite\SqlTable.h">
+      <Filter>easySQLite</Filter>
+    </ClInclude>
+    <ClInclude Include="easySqlite\SqlValue.h">
+      <Filter>easySQLite</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\src\AssertException.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\src\CheckMacros.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\src\Checks.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\src\Config.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\src\CurrentTest.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\src\DeferredTestReporter.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\src\DeferredTestResult.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\src\ExecuteTest.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\src\MemoryOutStream.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\src\ReportAssert.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\src\Test.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\src\TestDetails.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\src\TestList.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\src\TestMacros.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\src\TestReporter.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\src\TestReporterStdout.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\src\TestResults.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\src\TestRunner.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\src\TestSuite.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\src\TimeConstraint.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\src\TimeHelpers.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\src\UnitTest++.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\src\XmlTestReporter.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest++\src\Win32\TimeHelpers.h">
+      <Filter>UnitTest++</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="easySQLite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="easySqlite\SHA1.cpp">
+      <Filter>easySQLite</Filter>
+    </ClCompile>
+    <ClCompile Include="easySqlite\SqlCommon.cpp">
+      <Filter>easySQLite</Filter>
+    </ClCompile>
+    <ClCompile Include="easySqlite\SqlDatabase.cpp">
+      <Filter>easySQLite</Filter>
+    </ClCompile>
+    <ClCompile Include="easySqlite\SqlField.cpp">
+      <Filter>easySQLite</Filter>
+    </ClCompile>
+    <ClCompile Include="easySqlite\SqlFieldSet.cpp">
+      <Filter>easySQLite</Filter>
+    </ClCompile>
+    <ClCompile Include="easySqlite\sqlite3.c">
+      <Filter>easySQLite</Filter>
+    </ClCompile>
+    <ClCompile Include="easySqlite\SqlRecord.cpp">
+      <Filter>easySQLite</Filter>
+    </ClCompile>
+    <ClCompile Include="easySqlite\SqlRecordSet.cpp">
+      <Filter>easySQLite</Filter>
+    </ClCompile>
+    <ClCompile Include="easySqlite\SqlTable.cpp">
+      <Filter>easySQLite</Filter>
+    </ClCompile>
+    <ClCompile Include="easySqlite\SqlValue.cpp">
+      <Filter>easySQLite</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest++\src\AssertException.cpp">
+      <Filter>UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest++\src\Checks.cpp">
+      <Filter>UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest++\src\CurrentTest.cpp">
+      <Filter>UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest++\src\DeferredTestReporter.cpp">
+      <Filter>UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest++\src\DeferredTestResult.cpp">
+      <Filter>UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest++\src\MemoryOutStream.cpp">
+      <Filter>UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest++\src\ReportAssert.cpp">
+      <Filter>UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest++\src\Test.cpp">
+      <Filter>UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest++\src\TestDetails.cpp">
+      <Filter>UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest++\src\TestList.cpp">
+      <Filter>UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest++\src\TestReporter.cpp">
+      <Filter>UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest++\src\TestReporterStdout.cpp">
+      <Filter>UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest++\src\TestResults.cpp">
+      <Filter>UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest++\src\TestRunner.cpp">
+      <Filter>UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest++\src\TimeConstraint.cpp">
+      <Filter>UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest++\src\XmlTestReporter.cpp">
+      <Filter>UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest++\src\Win32\TimeHelpers.cpp">
+      <Filter>UnitTest++</Filter>
+    </ClCompile>
+    <ClCompile Include="Tests\TestSqlDatabase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tests\TestSqlField.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tests\TestSqlFieldSet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tests\TestSqlRecord.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tests\TestSqlRecordSet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tests\TestSqlTable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tests\TestSqlValue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
