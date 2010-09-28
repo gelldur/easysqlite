@@ -90,7 +90,7 @@ bool RecordSet::query(string sql)
 {
 	close();
 
-	char* error = 0;
+	char* error = NULL;
 
 	_result_query = sqlite3_exec(_db, sql.c_str(), on_next_record, this, &error);
 
@@ -99,7 +99,7 @@ bool RecordSet::query(string sql)
 		return true;
 	}
 
-	if (*error)
+	if (error)
 	{
 		_err_msg = error;
 		sqlite3_free(error);
