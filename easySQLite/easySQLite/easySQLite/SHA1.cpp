@@ -106,16 +106,16 @@ void CSHA1::Transform(UINT_32* pState, const UINT_8* pBuffer)
 }
 
 // Use this function to hash in binary data and strings
-void CSHA1::Update(const UINT_8* pbData, UINT_32 uLen)
+void CSHA1::Update(const UINT_8* pbData, size_t uLen)
 {
-	UINT_32 j = ((m_count[0] >> 3) & 0x3F);
+	size_t j = ((m_count[0] >> 3) & 0x3F);
 
 	if((m_count[0] += (uLen << 3)) < (uLen << 3))
 		++m_count[1]; // Overflow
 
 	m_count[1] += (uLen >> 29);
 
-	UINT_32 i;
+	size_t i;
 	if((j + uLen) > 63)
 	{
 		i = 64 - j;

@@ -221,7 +221,7 @@ public:
 	void Reset();
 
 	// Update the hash value
-	void Update(const UINT_8* pbData, UINT_32 uLen);
+	void Update(const UINT_8* pbData, size_t uLen);
 
 #ifdef SHA1_UTILITY_FUNCTIONS
 	// Hash in file contents

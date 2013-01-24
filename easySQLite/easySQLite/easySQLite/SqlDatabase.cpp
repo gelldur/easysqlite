@@ -13,7 +13,11 @@ Database::Database(void)
 
 	close();
 
+#ifdef WIN32
 	_tzset();
+#else
+    tzset();
+#endif
 }
 
 Database::~Database(void)

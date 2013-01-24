@@ -10,7 +10,7 @@
 #include <vector>
 #include <stdio.h>
 #include <time.h>
-
+#include <iostream>
 
 namespace sql
 {
@@ -131,9 +131,7 @@ class log
 public:
 	log(std::string s)
 	{
-		std::string text = s;
-		text += "\r\n";
-		printf(text.c_str());
+        std::cout << s << std::endl;
 	}
 };
 
@@ -145,7 +143,7 @@ string quoteStr(string value);
 
 string binToHex(const char* buffer, int size);
 
-string generateSHA(string& value);
+string generateSHA(const std::string value);
 
 string& trimleft(string& s);
 string& trimright(string& s);

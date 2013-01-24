@@ -8,7 +8,8 @@ Released under BSD License.
 
 SQLite part of this wrapper is using Public Domain license.
 
-Copyright (c) 2010, Piotr Zagawa
+Copyright (c) 2013 Artcator Inc.
+Copyright (c) 2010 Piotr Zagawa
 
 All rights reserved.
 

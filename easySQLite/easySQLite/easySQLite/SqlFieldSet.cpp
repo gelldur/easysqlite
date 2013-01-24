@@ -1,5 +1,5 @@
 #include "SqlFieldSet.h"
-
+#include "SqlCommon.h"
 
 namespace sql
 {

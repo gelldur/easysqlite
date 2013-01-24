@@ -1,6 +1,6 @@
 #include "SqlCommon.h"
-#include "SHA1.h"
-
+#include <sstream>
+#include <CommonCrypto/CommonCrypto.h>
 
 namespace sql
 {
@@ -66,10 +66,16 @@ string time::format(const char* format)
 	string s;
 	tm localtime;
 	char buffer[128];
-
-  if (localtime_s(&localtime, &_value) == 0)
+    
+#ifdef WIN32
+    if (localtime_s(&localtime, &_value) == 0)
 		if (strftime(buffer, 128, format, &localtime) > 0)
 			s = buffer;
+#else
+    localtime_r(&_value, &localtime);
+    if (strftime(buffer, 128, format, &localtime) > 0)
+        s = buffer;
+#endif
 
 	return s;
 }
@@ -112,16 +118,16 @@ void time::addDays(integer count)
 
 string intToStr(int value)
 {
-	char buffer[32];
-	_itoa_s(value, buffer, sizeof(buffer), 10);
-	return buffer;
+    std::stringstream ss;
+    ss << value;
+    return ss.str();
 }
 
 string intToStr(integer value)
 {
-	char buffer[64];
-	_i64toa_s(value, buffer, sizeof(buffer), 10);
-	return buffer;
+    std::stringstream ss;
+    ss << value;
+    return ss.str();
 }
 
 string quoteStr(string value)
@@ -161,14 +167,15 @@ string binToHex(const char* buffer, int size)
 
 #pragma warning(default : 4996)
 
-string generateSHA(string& value)
+string generateSHA(const std::string value)
 {
+#ifdef WIN32
 	CSHA1 sha;
-
+    
 	sha.Update((UINT_8*)value.c_str(), value.length());
-
+    
 	sha.Final();
-
+    
 	UINT_8 digest[20];
 	if (sha.GetHash(digest))
 	{
@@ -177,6 +184,15 @@ string generateSHA(string& value)
 	}
 
 	return "";
+#else
+    const char *str = value.c_str();
+    unsigned char r[CC_SHA1_DIGEST_LENGTH];
+    CC_SHA1(str, static_cast<CC_LONG>(value.length()), r);
+    
+    std::stringstream ss;
+    ss << r;
+    return ss.str();
+#endif
 }
 
 string& trimleft(string& s)

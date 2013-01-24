@@ -60,7 +60,7 @@ bool RecordSet::isResult()
 
 int RecordSet::count()
 {
-	return _records.size();
+	return static_cast<int>(_records.size());
 }
 
 int RecordSet::on_next_record(void* param, int column_count, char** values, char** columns)

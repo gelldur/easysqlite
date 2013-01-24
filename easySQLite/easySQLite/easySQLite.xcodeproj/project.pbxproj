@@ -1,0 +1,286 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A45EBCE616B1B64100D2ADC9 /* SqlCommon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A45EBCD316B1B5C800D2ADC9 /* SqlCommon.cpp */; };
+		A45EBCE716B1B64300D2ADC9 /* SqlDatabase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A45EBCD516B1B5C800D2ADC9 /* SqlDatabase.cpp */; };
+		A45EBCE816B1B64700D2ADC9 /* SqlField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A45EBCD716B1B5C800D2ADC9 /* SqlField.cpp */; };
+		A45EBCE916B1B64A00D2ADC9 /* SqlFieldSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A45EBCD916B1B5C800D2ADC9 /* SqlFieldSet.cpp */; };
+		A45EBCEA16B1B65E00D2ADC9 /* SqlRecord.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A45EBCDD16B1B5C800D2ADC9 /* SqlRecord.cpp */; };
+		A45EBCEB16B1B66200D2ADC9 /* SqlRecordSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A45EBCDF16B1B5C800D2ADC9 /* SqlRecordSet.cpp */; };
+		A45EBCEC16B1B66500D2ADC9 /* SqlTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A45EBCE116B1B5C800D2ADC9 /* SqlTable.cpp */; };
+		A45EBCED16B1B66800D2ADC9 /* SqlValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A45EBCE316B1B5C800D2ADC9 /* SqlValue.cpp */; };
+		A45EBCFA16B1BEB000D2ADC9 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A45EBCF916B1BEAF00D2ADC9 /* libsqlite3.dylib */; };
+		A45EBCFD16B1BF0900D2ADC9 /* mac_main.cc in Sources */ = {isa = PBXBuildFile; fileRef = A45EBCFB16B1BF0900D2ADC9 /* mac_main.cc */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A45EBCB816B1B4B200D2ADC9 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A45EBCBA16B1B4B200D2ADC9 /* easySQLite */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = easySQLite; sourceTree = BUILT_PRODUCTS_DIR; };
+		A45EBCCD16B1B5C800D2ADC9 /* _AUTHOR.TXT */ = {isa = PBXFileReference; lastKnownFileType = text; path = _AUTHOR.TXT; sourceTree = "<group>"; };
+		A45EBCCE16B1B5C800D2ADC9 /* _LICENSE.TXT */ = {isa = PBXFileReference; lastKnownFileType = text; path = _LICENSE.TXT; sourceTree = "<group>"; };
+		A45EBCCF16B1B5C800D2ADC9 /* _ReadMe.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = _ReadMe.html; sourceTree = "<group>"; };
+		A45EBCD016B1B5C800D2ADC9 /* _VERSION.TXT */ = {isa = PBXFileReference; lastKnownFileType = text; path = _VERSION.TXT; sourceTree = "<group>"; };
+		A45EBCD316B1B5C800D2ADC9 /* SqlCommon.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SqlCommon.cpp; sourceTree = "<group>"; };
+		A45EBCD416B1B5C800D2ADC9 /* SqlCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SqlCommon.h; sourceTree = "<group>"; };
+		A45EBCD516B1B5C800D2ADC9 /* SqlDatabase.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SqlDatabase.cpp; sourceTree = "<group>"; };
+		A45EBCD616B1B5C800D2ADC9 /* SqlDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SqlDatabase.h; sourceTree = "<group>"; };
+		A45EBCD716B1B5C800D2ADC9 /* SqlField.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SqlField.cpp; sourceTree = "<group>"; };
+		A45EBCD816B1B5C800D2ADC9 /* SqlField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SqlField.h; sourceTree = "<group>"; };
+		A45EBCD916B1B5C800D2ADC9 /* SqlFieldSet.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SqlFieldSet.cpp; sourceTree = "<group>"; };
+		A45EBCDA16B1B5C800D2ADC9 /* SqlFieldSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SqlFieldSet.h; sourceTree = "<group>"; };
+		A45EBCDD16B1B5C800D2ADC9 /* SqlRecord.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SqlRecord.cpp; sourceTree = "<group>"; };
+		A45EBCDE16B1B5C800D2ADC9 /* SqlRecord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SqlRecord.h; sourceTree = "<group>"; };
+		A45EBCDF16B1B5C800D2ADC9 /* SqlRecordSet.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SqlRecordSet.cpp; sourceTree = "<group>"; };
+		A45EBCE016B1B5C800D2ADC9 /* SqlRecordSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SqlRecordSet.h; sourceTree = "<group>"; };
+		A45EBCE116B1B5C800D2ADC9 /* SqlTable.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SqlTable.cpp; sourceTree = "<group>"; };
+		A45EBCE216B1B5C800D2ADC9 /* SqlTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SqlTable.h; sourceTree = "<group>"; };
+		A45EBCE316B1B5C800D2ADC9 /* SqlValue.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SqlValue.cpp; sourceTree = "<group>"; };
+		A45EBCE416B1B5C800D2ADC9 /* SqlValue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SqlValue.h; sourceTree = "<group>"; };
+		A45EBCF916B1BEAF00D2ADC9 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		A45EBCFB16B1BF0900D2ADC9 /* mac_main.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mac_main.cc; sourceTree = "<group>"; };
+		A45EBCFC16B1BF0900D2ADC9 /* mac_main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mac_main.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A45EBCB716B1B4B200D2ADC9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A45EBCFA16B1BEB000D2ADC9 /* libsqlite3.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A45EBCAF16B1B4B200D2ADC9 = {
+			isa = PBXGroup;
+			children = (
+				A45EBCFB16B1BF0900D2ADC9 /* mac_main.cc */,
+				A45EBCFC16B1BF0900D2ADC9 /* mac_main.h */,
+				A45EBCCC16B1B5C800D2ADC9 /* easySQLite */,
+				A45EBCF816B1BEA100D2ADC9 /* Libraries */,
+				A45EBCBB16B1B4B200D2ADC9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A45EBCBB16B1B4B200D2ADC9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A45EBCBA16B1B4B200D2ADC9 /* easySQLite */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A45EBCCC16B1B5C800D2ADC9 /* easySQLite */ = {
+			isa = PBXGroup;
+			children = (
+				A45EBCCD16B1B5C800D2ADC9 /* _AUTHOR.TXT */,
+				A45EBCCE16B1B5C800D2ADC9 /* _LICENSE.TXT */,
+				A45EBCCF16B1B5C800D2ADC9 /* _ReadMe.html */,
+				A45EBCD016B1B5C800D2ADC9 /* _VERSION.TXT */,
+				A45EBCD316B1B5C800D2ADC9 /* SqlCommon.cpp */,
+				A45EBCD416B1B5C800D2ADC9 /* SqlCommon.h */,
+				A45EBCD516B1B5C800D2ADC9 /* SqlDatabase.cpp */,
+				A45EBCD616B1B5C800D2ADC9 /* SqlDatabase.h */,
+				A45EBCD716B1B5C800D2ADC9 /* SqlField.cpp */,
+				A45EBCD816B1B5C800D2ADC9 /* SqlField.h */,
+				A45EBCD916B1B5C800D2ADC9 /* SqlFieldSet.cpp */,
+				A45EBCDA16B1B5C800D2ADC9 /* SqlFieldSet.h */,
+				A45EBCDD16B1B5C800D2ADC9 /* SqlRecord.cpp */,
+				A45EBCDE16B1B5C800D2ADC9 /* SqlRecord.h */,
+				A45EBCDF16B1B5C800D2ADC9 /* SqlRecordSet.cpp */,
+				A45EBCE016B1B5C800D2ADC9 /* SqlRecordSet.h */,
+				A45EBCE116B1B5C800D2ADC9 /* SqlTable.cpp */,
+				A45EBCE216B1B5C800D2ADC9 /* SqlTable.h */,
+				A45EBCE316B1B5C800D2ADC9 /* SqlValue.cpp */,
+				A45EBCE416B1B5C800D2ADC9 /* SqlValue.h */,
+			);
+			path = easySQLite;
+			sourceTree = "<group>";
+		};
+		A45EBCF816B1BEA100D2ADC9 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				A45EBCF916B1BEAF00D2ADC9 /* libsqlite3.dylib */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A45EBCB916B1B4B200D2ADC9 /* easySQLite */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A45EBCC416B1B4B200D2ADC9 /* Build configuration list for PBXNativeTarget "easySQLite" */;
+			buildPhases = (
+				A45EBCB616B1B4B200D2ADC9 /* Sources */,
+				A45EBCB716B1B4B200D2ADC9 /* Frameworks */,
+				A45EBCB816B1B4B200D2ADC9 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = easySQLite;
+			productName = easySQLite;
+			productReference = A45EBCBA16B1B4B200D2ADC9 /* easySQLite */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A45EBCB116B1B4B200D2ADC9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Artcator Inc.";
+			};
+			buildConfigurationList = A45EBCB416B1B4B200D2ADC9 /* Build configuration list for PBXProject "easySQLite" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A45EBCAF16B1B4B200D2ADC9;
+			productRefGroup = A45EBCBB16B1B4B200D2ADC9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A45EBCB916B1B4B200D2ADC9 /* easySQLite */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A45EBCB616B1B4B200D2ADC9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A45EBCE616B1B64100D2ADC9 /* SqlCommon.cpp in Sources */,
+				A45EBCE716B1B64300D2ADC9 /* SqlDatabase.cpp in Sources */,
+				A45EBCE816B1B64700D2ADC9 /* SqlField.cpp in Sources */,
+				A45EBCE916B1B64A00D2ADC9 /* SqlFieldSet.cpp in Sources */,
+				A45EBCEA16B1B65E00D2ADC9 /* SqlRecord.cpp in Sources */,
+				A45EBCEB16B1B66200D2ADC9 /* SqlRecordSet.cpp in Sources */,
+				A45EBCEC16B1B66500D2ADC9 /* SqlTable.cpp in Sources */,
+				A45EBCED16B1B66800D2ADC9 /* SqlValue.cpp in Sources */,
+				A45EBCFD16B1BF0900D2ADC9 /* mac_main.cc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A45EBCC216B1B4B200D2ADC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A45EBCC316B1B4B200D2ADC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A45EBCC516B1B4B200D2ADC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A45EBCC616B1B4B200D2ADC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A45EBCB416B1B4B200D2ADC9 /* Build configuration list for PBXProject "easySQLite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A45EBCC216B1B4B200D2ADC9 /* Debug */,
+				A45EBCC316B1B4B200D2ADC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A45EBCC416B1B4B200D2ADC9 /* Build configuration list for PBXNativeTarget "easySQLite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A45EBCC516B1B4B200D2ADC9 /* Debug */,
+				A45EBCC616B1B4B200D2ADC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A45EBCB116B1B4B200D2ADC9 /* Project object */;
+}

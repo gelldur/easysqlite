@@ -41,7 +41,7 @@ void Record::initColumnValue(int column_index, char* value, field_type type)
 
 int Record::columnCount()
 {
-	return _values.size();
+	return static_cast<int>(_values.size());
 }
 
 Value* Record::getValue(int column_index)
