@@ -1,7 +1,9 @@
 This is a C++ wrapper for SQLite C API database engine.
 It was written to simplify and speedup coding of local database access.
 
-This fork is modified for <b>Cocos2dx</b> engine and cross platform :)
+This fork is modified for <b>Cocos2dx</b> engine and cross platform games :)
+
+Old repository https://code.google.com/p/easysqlite/
 
 Why easySQLite solution is better than others ?
 
