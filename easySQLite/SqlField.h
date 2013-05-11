@@ -35,7 +35,7 @@ public:
 
 public:
 	int getIndex();
-	string getName();
+	string getName() const;
 	string getTypeStr();
 	field_type getType();
 	bool isPrimaryKey();

@@ -10,7 +10,7 @@
 #include <vector>
 #include <stdio.h>
 #include <time.h>
-#include <iostream>
+
 
 namespace sql
 {
@@ -112,7 +112,7 @@ public:
 
 
 //comment this directive to disable exceptions
-#define USE_EXCEPTIONS
+//#define USE_EXCEPTIONS
 
 
 #ifndef THROW_EXCEPTION
@@ -131,7 +131,9 @@ class log
 public:
 	log(std::string s)
 	{
-        std::cout << s << std::endl;
+		std::string text = s;
+		text += "\r\n";
+		printf("%s",text.c_str());
 	}
 };
 
@@ -143,7 +145,7 @@ string quoteStr(string value);
 
 string binToHex(const char* buffer, int size);
 
-string generateSHA(const std::string value);
+string generateSHA(string& value);
 
 string& trimleft(string& s);
 string& trimright(string& s);

@@ -1,5 +1,5 @@
 #include "SqlFieldSet.h"
-#include "SqlCommon.h"
+
 
 namespace sql
 {
@@ -86,7 +86,8 @@ string FieldSet::getDefinition()
 
 string FieldSet::definitionHash()
 {
-	return generateSHA(getDefinition());
+	string str = getDefinition();
+	return generateSHA(str);
 }
 
 string FieldSet::toString()

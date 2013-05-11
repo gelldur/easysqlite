@@ -1,5 +1,5 @@
 #include "SqlRecord.h"
-
+#include "SqlFieldSet.h"
 
 namespace sql
 {
@@ -41,7 +41,7 @@ void Record::initColumnValue(int column_index, char* value, field_type type)
 
 int Record::columnCount()
 {
-	return static_cast<int>(_values.size());
+	return _values.size();
 }
 
 Value* Record::getValue(int column_index)
@@ -268,4 +268,41 @@ bool Record::equalsValues(Record* record)
 
 
 //sql eof
-};
+
+void Record::setNull(Field& field)
+{
+	setNull(field.getName());
+}
+
+void Record::setString(Field& field, string value)
+{
+	setString(field.getName(),value);
+}
+
+void Record::setInteger(Field& field, integer value)
+{
+	setInteger(field.getName(),value);
+}
+
+void Record::setDouble(Field& field, double value)
+{
+	setDouble(field.getName(),value);
+}
+
+Value* Record::getValue(const Field& field)
+{
+	return getValue(field.getName());
+}
+
+void Record::setBool(Field& field, bool value)
+{
+	setBool(field.getName(),value);
+}
+
+void Record::setTime(Field& field, time value)
+{
+	setTime(field.getName(),value);
+}
+
+}
+;

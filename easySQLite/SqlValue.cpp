@@ -1,5 +1,5 @@
 #include "SqlValue.h"
-#include <stdlib.h>
+
 
 namespace sql
 {
@@ -9,7 +9,7 @@ Value::Value()
 	setValue(NULL, type_undefined);
 }
 
-Value::Value(char* value, field_type type)
+Value::Value(const char* value, field_type type)
 {
 	setValue(value, type);
 }
@@ -49,14 +49,12 @@ bool Value::equals(Value& value)
 		return (asBool() == value.asBool());
 	case type_time:
 		return (asTime() == value.asTime());
-    default:
-        break;
+	default:
+		return false;
 	}
-
-	return false;
 }
 
-void Value::setValue(char* value, field_type type)
+void Value::setValue(const char* value, field_type type)
 {
 	_isNull = true;
 	_value.clear();
@@ -107,8 +105,10 @@ integer Value::asInteger()
 {
 	if (isNull())
 		return 0;
-    
-    return std::stoull(_value);
+
+	long long value = 0;
+	sscanf(_value.c_str(),"%lld",&value);
+	return value;
 }
 
 double Value::asDouble()
@@ -116,7 +116,9 @@ double Value::asDouble()
 	if (isNull())
 		return 0.0;
 
-	return atof(_value.c_str());
+	double value = 0;
+	sscanf(_value.c_str(),"%lf",&value);
+	return value;
 }
 
 bool Value::asBool()
@@ -146,18 +148,13 @@ void Value::setString(string value)
 }
 
 //CRT_SECURE_NO_WARNINGS
-#pragma warning(disable : 4996)
 
 void Value::setInteger(integer value)
 {
 	char buffer[128];
-    
-#ifdef WIN32
-	_i64toa(value, buffer, 10);
-#else
-    sprintf(buffer, "%lld", value);
-#endif
-    
+
+	sprintf(buffer,"%lld",value);
+
 	_isNull = false;
 	_value = buffer;
 }
@@ -172,7 +169,7 @@ void Value::setDouble(double value)
 	_value = buffer;
 }
 
-#pragma warning(default : 4996)
+
 
 void Value::setBool(bool value)
 {

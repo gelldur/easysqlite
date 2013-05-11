@@ -1,6 +1,6 @@
 #include "SqlCommon.h"
-#include <sstream>
-#include <CommonCrypto/CommonCrypto.h>
+#include "SHA1.h"
+#include <time.h>
 
 namespace sql
 {
@@ -64,18 +64,12 @@ time_t time::get()
 string time::format(const char* format)
 {
 	string s;
-	tm localtime;
+	tm* localTime;
 	char buffer[128];
-    
-#ifdef WIN32
-    if (localtime_s(&localtime, &_value) == 0)
-		if (strftime(buffer, 128, format, &localtime) > 0)
+
+  if ((localTime = localtime(&_value)) == 0)
+		if (strftime(buffer, 128, format, localTime) > 0)
 			s = buffer;
-#else
-    localtime_r(&_value, &localtime);
-    if (strftime(buffer, 128, format, &localtime) > 0)
-        s = buffer;
-#endif
 
 	return s;
 }
@@ -118,16 +112,16 @@ void time::addDays(integer count)
 
 string intToStr(int value)
 {
-    std::stringstream ss;
-    ss << value;
-    return ss.str();
+	char buffer[32];
+	sprintf(buffer,"%d",value);
+	return buffer;
 }
 
 string intToStr(integer value)
 {
-    std::stringstream ss;
-    ss << value;
-    return ss.str();
+	char buffer[64];
+	sprintf(buffer,"%lld",value);
+	return buffer;
 }
 
 string quoteStr(string value)
@@ -144,9 +138,6 @@ string quoteStr(string value)
 
 	return s;
 }
-
-//CRT_SECURE_NO_WARNINGS
-#pragma warning(disable : 4996)
 
 string binToHex(const char* buffer, int size)
 {
@@ -165,17 +156,14 @@ string binToHex(const char* buffer, int size)
 	return s;
 }
 
-#pragma warning(default : 4996)
-
-string generateSHA(const std::string value)
+string generateSHA(string& value)
 {
-#ifdef WIN32
 	CSHA1 sha;
-    
+
 	sha.Update((UINT_8*)value.c_str(), value.length());
-    
+
 	sha.Final();
-    
+
 	UINT_8 digest[20];
 	if (sha.GetHash(digest))
 	{
@@ -184,15 +172,6 @@ string generateSHA(const std::string value)
 	}
 
 	return "";
-#else
-    const char *str = value.c_str();
-    unsigned char r[CC_SHA1_DIGEST_LENGTH];
-    CC_SHA1(str, static_cast<CC_LONG>(value.length()), r);
-    
-    std::stringstream ss;
-    ss << r;
-    return ss.str();
-#endif
 }
 
 string& trimleft(string& s)
@@ -235,8 +214,6 @@ string trim(const string& s)
 	return trim(t);
 }
 
-//CRT_SECURE_NO_WARNINGS
-#pragma warning(disable : 4996)
 
 void listToVector(string s, std::vector<string>& vector, const char* sep)
 {
@@ -258,8 +235,6 @@ void listToVector(string s, std::vector<string>& vector, const char* sep)
 
 	delete [] buffer;
 }
-
-#pragma warning(default : 4996)
 
 
 //sql eof

@@ -106,16 +106,16 @@ void CSHA1::Transform(UINT_32* pState, const UINT_8* pBuffer)
 }
 
 // Use this function to hash in binary data and strings
-void CSHA1::Update(const UINT_8* pbData, size_t uLen)
+void CSHA1::Update(const UINT_8* pbData, UINT_32 uLen)
 {
-	size_t j = ((m_count[0] >> 3) & 0x3F);
+	UINT_32 j = ((m_count[0] >> 3) & 0x3F);
 
 	if((m_count[0] += (uLen << 3)) < (uLen << 3))
 		++m_count[1]; // Overflow
 
 	m_count[1] += (uLen >> 29);
 
-	size_t i;
+	UINT_32 i;
 	if((j + uLen) > 63)
 	{
 		i = 64 - j;
@@ -135,8 +135,6 @@ void CSHA1::Update(const UINT_8* pbData, size_t uLen)
 
 #ifdef SHA1_UTILITY_FUNCTIONS
 
-//CRT_SECURE_NO_WARNINGS
-#pragma warning(disable : 4996)
 
 // Hash in file contents
 bool CSHA1::HashFile(const TCHAR* tszFileName)
@@ -174,8 +172,6 @@ bool CSHA1::HashFile(const TCHAR* tszFileName)
 	fclose(fpIn);
 	return (lRemaining == 0);
 }
-
-#pragma warning(default : 4996)
 
 #endif
 

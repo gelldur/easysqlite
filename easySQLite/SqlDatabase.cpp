@@ -1,5 +1,5 @@
 #include "SqlDatabase.h"
-#include "SqlRecordset.h"
+#include "SqlRecordSet.h"
 #include <time.h>
 
 
@@ -12,12 +12,6 @@ Database::Database(void)
 	_result_open = SQLITE_ERROR;
 
 	close();
-
-#ifdef WIN32
-	_tzset();
-#else
-    tzset();
-#endif
 }
 
 Database::~Database(void)

@@ -36,6 +36,7 @@ public:
 	int columnCount();
 	Value* getValue(int column_index);
 	Value* getValue(string fieldName);
+	Value* getValue(const Field& field);
 	Value* getKeyIdValue();
 	Field* fieldByName(string fieldName);
 	FieldSet* fields();
@@ -64,6 +65,13 @@ public:
 	void setBool(string fieldName, bool value);
 	void setTime(string fieldName, time value);
 
+public:
+	void setNull(Field& field);
+	void setString(Field& field, string value);
+	void setInteger(Field& field, integer value);
+	void setDouble(Field& field, double value);
+	void setBool(Field& field, bool value);
+	void setTime(Field& field, time value);
 };
 
 

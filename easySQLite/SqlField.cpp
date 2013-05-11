@@ -58,7 +58,7 @@ int Field::getIndex()
 	return _index;
 }
 
-string Field::getName()
+string Field::getName() const
 {
 	return _name;
 }
@@ -72,10 +72,9 @@ string Field::getTypeStr()
 	case type_float: return "REAL";
 	case type_bool: return "INTEGER";
 	case type_time: return "INTEGER";
-    default:
-        break;
+	default:
+		return "";
 	}
-	return "";
 }
 
 bool Field::isPrimaryKey()

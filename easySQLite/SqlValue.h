@@ -21,7 +21,7 @@ private:
 
 public:
 	Value();
-	Value(char* value, field_type type);
+	Value(const char* value, field_type type);
 	Value(const Value& value);
 	Value& operator=(const Value& value);
 	bool equals(Value& value);
@@ -45,7 +45,7 @@ public:
 
 public:
 	bool isNull();
-	void setValue(char* value, field_type type);
+	void setValue(const char* value, field_type type);
 
 };
 
