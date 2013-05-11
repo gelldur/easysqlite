@@ -1,7 +1,7 @@
 This is a C++ wrapper for SQLite C API database engine.
 It was written to simplify and speedup coding of local database access.
 
-easySQLite was written and tested with Visual C++ 2010 Express, but is not using any nonstandard extensions, so should compile with any other C++ compiler.
+This fork is modified for <b>Cocos2dx</b> engine and cross platform :)
 
 Why easySQLite solution is better than others ?
 
