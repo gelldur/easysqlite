@@ -45,6 +45,7 @@ void FieldSet::copy(const std::vector<Field>& definition)
 	for (int index = 0; index < (int)_vec.size(); index++)
 	{
 		Field& field = _vec[index];
+		field._index = index;
 		_map[field.getName()] = &field;
 	}
 }
